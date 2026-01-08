@@ -1,9 +1,6 @@
 // 1. import the express library
 const express = require('express');
 
-// Node.js 'path' module
-import path from 'path';
-
 // Dotenv - For API Key Access
 const dotenv = require('dotenv');
 
