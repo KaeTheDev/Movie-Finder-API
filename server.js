@@ -12,3 +12,8 @@ const app = express();
 
 // 3. Define the port the server will run on
 const port = 3000;
+
+// Start the server and have it listen for incoming connections
+app.listen(port, ()=> {
+    console.log(`Server is running at http://localhost:${port}`);
+});
