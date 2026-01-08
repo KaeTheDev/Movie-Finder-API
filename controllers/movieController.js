@@ -16,15 +16,15 @@ const searchMovies = async(req, res) => {
         // Call OMDb API
         const response = await axios.get('https://www.omdbapi.com/', {
             params: {
-                search: title,
-                apiKey: process.env.OMDB_API_KEY,
+                s: title,
+                apikey: process.env.OMDB_API_KEY,
             },
         });
 
         // send response back to client
         res.json(response.data);
     } catch(error) {
-        console.error('OMDb API error:', error.message);
+        console.error('OMDb API error:', error.response?.data || error.message);
 
         res.status(500).json({
             error: 'Failed to fetch movies',
